@@ -1,0 +1,1 @@
+sudo rsync -av html/ /var/www/html/
