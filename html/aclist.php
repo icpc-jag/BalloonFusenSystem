@@ -35,11 +35,13 @@ foreach ($q as $x) {
         if (is_null($x['user_name'])) {
             $user_name = '<span style="color:red">★</span>';
             $force = '';
+            $on_submit = '';
         } else {
             $user_name = htmlspecialchars($x['user_name'], ENT_QUOTES, 'UTF-8', true);
             $force = '&force=1';
+            $on_submit = ' onsubmit="return confirm(\'Are you sure?\')"';
         }
-        echo "<form method=\"post\" action=\"deliver.php?name={$name}&id={$id}{$force}\">";
+        echo "<form method=\"post\" action=\"deliver.php?name={$name}&id={$id}{$force}\"{$on_submit}>";
         echo "<p>{$problem_name} <strong>{$team_name}</strong> <button type=\"submit\">風船を配る</button> {$user_name}</p>";
         echo "</form>";
     }
