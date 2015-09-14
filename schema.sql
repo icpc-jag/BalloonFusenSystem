@@ -21,3 +21,9 @@ CREATE TABLE team (
   visible int(10) NOT NULL DEFAULT 0,
   PRIMARY KEY (contest_name, team_id)
 ) ENGINE=InnoDB;
+
+CREATE TABLE clar (
+  contest_name varchar(191) NOT NULL,
+  clar_hash varchar(191) NOT NULL,
+  PRIMARY KEY (contest_name)
+) ENGINE=InnoDB;

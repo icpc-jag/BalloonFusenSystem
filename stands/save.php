@@ -38,3 +38,9 @@ foreach ($ac as $row) if ($row !== '') {
         );
     }
 }
+
+$clar = file_get_contents('clar.txt');
+query($pdo,
+    'INSERT INTO clar(contest_name, clar_hash) VALUES (?, ?) ON DUPLICATE KEY UPDATE clar_hash = ?',
+    array($contest_name, $clar, $clar)
+);

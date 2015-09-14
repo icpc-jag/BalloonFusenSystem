@@ -7,6 +7,7 @@ import urllib
 import urllib2
 import json
 import time
+import hashlib
 
 with open('contest.txt', 'r') as f:
     contest_url = f.readline().rstrip()
@@ -34,3 +35,7 @@ with open('ac.tsv', 'w') as f:
         for i, col in enumerate(row['tasks']):
             if col['score'] > 0:
                 f.write('%s\t%s\n' % (user_screen_name, task_name[i]))
+with open('clar.txt', 'w') as f:
+    body = opener.open(contest_url + 'clarifications').read()
+    stripped = re.sub('server-current-time..20../../.. ..:..:..', '', body)
+    f.write(hashlib.md5(stripped).hexdigest())
