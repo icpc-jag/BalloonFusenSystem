@@ -11,4 +11,10 @@ cd BalloonFusenSystem/
 mysql -u root < create_db.sql
 mysql -u root bfs < schema.sql
 sudo ./deploy
+cd stands
+# edit contest.txt
+# create passwd.txt
+#   $ cat passwd.txt
+#   id:pass
+./run.sh
 ```
