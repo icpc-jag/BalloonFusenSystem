@@ -12,7 +12,7 @@ $teams = explode("\n", file_get_contents('teams.tsv'));
 foreach ($teams as $row) if ($row !== '') {
     list($team_id, $team_name) = explode("\t", $row);
     query($pdo,
-        'INSERT INTO team(contest_name, team_id, team_name, visible) VALUES (?, ?, ?, 0) ON DUPLICATE KEY UPDATE team_name = ?',
+        'INSERT INTO team(contest_name, team_id, team_name, visible) VALUES (?, ?, ?, 1) ON DUPLICATE KEY UPDATE team_name = ?',
         array($contest_name, $team_id, $team_name, $team_name)
     );
 }
