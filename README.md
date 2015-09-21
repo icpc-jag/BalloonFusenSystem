@@ -12,9 +12,21 @@ mysql -u root < create_db.sql
 mysql -u root bfs < schema.sql
 sudo ./deploy
 cd stands
+```
+atcoder
+```
 # edit contest.txt
 # create passwd.txt
 #   $ cat passwd.txt
 #   id:pass
+python login.py
+./run.sh
+```
+aoj
+```
+# edit contest.txt
+#   $ cat contest.txt
+#   http://judge.u-aizu.ac.jp/onlinejudge/webservice/contest_standing?id=ACPC2015Day1
+#   ACPC2015Day1
 ./run.sh
 ```
