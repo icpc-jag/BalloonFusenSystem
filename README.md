@@ -37,5 +37,7 @@ aoj
 #   $ cat contest.txt
 #   http://judge.u-aizu.ac.jp/onlinejudge/webservice/contest_standing?id=ACPC2015Day1
 #   ACPC2015Day1
-./run.sh
+#   pass_code
+#   staff_code
+./ac_aoj.sh
 ```

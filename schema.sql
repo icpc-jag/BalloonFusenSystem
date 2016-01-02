@@ -1,5 +1,7 @@
 CREATE TABLE contest (
   contest_name varchar(191) NOT NULL,
+  pass_code varchar(191) NOT NULL,
+  staff_code varchar(191) NOT NULL,
   PRIMARY KEY (contest_name)
 ) ENGINE=InnoDB;
 
@@ -18,7 +20,7 @@ CREATE TABLE team (
   contest_name varchar(191) NOT NULL,
   team_id varchar(191) NOT NULL,
   team_name varchar(191) NOT NULL,
-  visible int(10) NOT NULL DEFAULT 0,
+  seat varchar(191) NOT NULL DEFAULT '',
   PRIMARY KEY (contest_name, team_id)
 ) ENGINE=InnoDB;
 

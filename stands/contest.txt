@@ -1,2 +1,4 @@
 https://jag2015summer-day4.contest.atcoder.jp/
 day4
+pass_code
+staff_code

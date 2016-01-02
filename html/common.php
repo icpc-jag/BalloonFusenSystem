@@ -39,6 +39,29 @@ function query(PDO $pdo, $statement, array $param, $classname = null)
     return $pdos;
 }
 
+function auth($contest_name, $pdo)
+{
+    session_start();
+    if (!isset($_SESSION[$contest_name])) {
+        echo 'login error';
+        exit(1);
+    }
+    $staff_code = $_SESSION[$contest_name];
+
+    $q = query($pdo, 'SELECT staff_code FROM contest WHERE contest_name = ?', array($contest_name));
+    foreach ($q as $x) {
+        $contest_staff_code = $x['staff_code'];
+        if ($staff_code !== $contest_staff_code) {
+            echo 'pass code is wrong';
+            exit(1);
+        } else {
+            return true;
+        }
+    }
+    echo 'invalid contest_name';
+    exit(1);
+}
+
 function exception_error_handler($errno, $errstr, $errfile, $errline) {
     switch ($errno) {
         case E_STRICT:
