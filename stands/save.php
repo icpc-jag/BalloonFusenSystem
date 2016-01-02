@@ -5,14 +5,18 @@ $pdo = getPDO();
 
 $contest = explode("\n", file_get_contents('contest.txt'));
 $contest_name = $contest[1];
+$pass_code = $contest[2];
+$staff_code = $contest[3];
 
-query($pdo, 'INSERT IGNORE INTO contest(contest_name) VALUES (?)', array($contest_name));
+query($pdo, 'INSERT IGNORE INTO contest(contest_name, pass_code, staff_code) VALUES (?, ?, ?)',
+    array($contest_name, $pass_code, $staff_code)
+);
 
 $teams = explode("\n", file_get_contents('teams.tsv'));
 foreach ($teams as $row) if ($row !== '') {
     list($team_id, $team_name) = explode("\t", $row);
     query($pdo,
-        'INSERT INTO team(contest_name, team_id, team_name, visible) VALUES (?, ?, ?, 1) ON DUPLICATE KEY UPDATE team_name = ?',
+        'INSERT INTO team(contest_name, team_id, team_name) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE team_name = ?',
         array($contest_name, $team_id, $team_name, $team_name)
     );
 }
