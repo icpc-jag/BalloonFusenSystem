@@ -39,5 +39,5 @@ aoj
 #   ACPC2015Day1
 #   pass_code
 #   staff_code
-./ac_aoj.sh
+./run_aoj.sh
 ```
