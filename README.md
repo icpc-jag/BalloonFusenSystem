@@ -1,4 +1,13 @@
 # BalloonFusenSystem
+
+## 操作方法
+
+http://itohjam.hatenablog.com/entry/2015/12/17/035829
+
+[@itohjam](https://github.com/itohjam) さんが書いてくださいました。ありがとうございます。
+
+## 設置方法
+
 Amazon Linux AMI 2015.03.1 (HVM), SSD Volume Typeを使用
 
 ```
