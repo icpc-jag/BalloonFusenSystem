@@ -15,7 +15,7 @@ sudo yum update
 sudo yum install git php56 php56-mysqlnd mysql55-server
 sudo service httpd start
 sudo service mysqld start
-git clone git@github.com:hasipon/BalloonFusenSystem.git
+git clone git@github.com:icpc-jag/BalloonFusenSystem.git
 cd BalloonFusenSystem/
 mysql -u root < create_db.sql
 mysql -u root bfs < schema.sql
@@ -29,7 +29,7 @@ atcoder
 #   $ cat passwd.txt
 #   id:pass
 python login.py
-./run.sh
+nohup ./run.sh > ~/log.txt &
 ```
 aoj
 ```
